@@ -1,123 +1,42 @@
-import React  from "react";
-
-let display = null
-let num1 = ""
-let num2 = ""
-let numA = "A"
-let operator = (a,b)=> {}
+import React from "react";
 
 
-
-const multiply = (a,b) => {
-  return a * b
-}
-
-const add = (a,b) => {
-  return a + b
-}
-
-const divide = (a,b) => {
-  return a / b
-}
-
-const subtract = (a,b) => {
-  return a - b
-}
-
-
-const superIf = (carrier)=>{
+// const buttons = [["clear","C"," / "],[9,8,7," * "],[6,5,4," - "],[3,2,1," + "],[0,"."," = "]]
+// return (
+// <div className="container">
+// {buttons.map((button, index) => {
   
-  console.log(carrier);
-  if( carrier ===null){
-    display=0
-  } else if(carrier === "Clear" ) {
-    display = null
-    numA="A"
-    num1 = ""
-    num2 = ""
-    operator = (a,b)=> {}
-  } else if(carrier ===" C "){
-
-    if(numA === "A"){
-      num1 = ""
-    }else{
-      num2 = ""
-    }
-  } else if(carrier===" / "){
-
-    operator=(a,b)=> divide(a,b);
-    numA="B";
-
-  } else if(carrier === " * "){
-
-    operator=(a,b)=> multiply(a,b);
-    numA="B";
-
-  } else if(carrier === " - "){
-
-    operator=(a,b)=> subtract(a,b);
-    numA="B";
-
-  } else if(carrier === " + "){
-    console.log(1)
-    operator=(a,b)=> add(a,b);
-    numA="B";
-
-  } else if(carrier === " = ") {
-    console.log("=")
-    let num = operator(parseInt(num1),parseInt(num2))
-    console.log(num)
-    num1 = num
-    display = num1
-    num2 = ""
-    operator = (a,b)=> {}
-
-  } else if (Number.isInteger(carrier)||carrier ===".") {
-
-    if(numA === "A"){
-
-      num1=`${num1}${carrier}`;
-      display = num1;
-      console.log("a")
-      console.log(num1);
-
-    }else{
-
-      num2 = `${num2}${carrier}`;
-      display = num2;
-      console.log("b")
-      console.log(num2)
-        
-    }
-
- }
-}
-
-
+//   <div>
+//     {button.map((values,index2)=>{
+//     <Button key={index} label={button} click={() => this.clickHandler(button)} />
+//     }
+//     )
+//   <div/>  
+// })}
+// </div>
+// );
 
 
 
 
 
 const Button = (props) =>{
-
-
+  
   return (
     <div>
       <button onClick={()=> {
-             superIf(props.label)}}>{props.label}
+             props.func(props.label)}}>{props.label}
       </button>
     </div>
-
-
   )
 };
 
-const Display =()=>{
 
+const Display =(props)=>{
+//   
   return(
     <div>
-      <h1> {display} </h1>
+      <h1>{props.label}  </h1>
     </div>
   )
 }
