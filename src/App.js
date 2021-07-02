@@ -9,23 +9,20 @@ const [num1, setnum1] = useState(0)
 const [num2, setnum2] = useState(0)
 const [numA, setnumA] = useState("A")
 const [operator, setoperator] =useState("")
-
+let holder
  
 
 
 const superIf = (carrier)=>{
 
   console.log(carrier);
-  if( carrier === null){
-   setdisplay(0)
-   setcarrier("") 
-  } else if(carrier === " Clear " ) {
+   if(carrier === " Clear " ) {
 
     setdisplay(0)
     setnumA("A")
     setnum1(0)
     setnum2(0)
-    setoperator(()=>(a,b)=> {})
+    setoperator("")
     setcarrier("")
 
   } else if(carrier ===" C "){
@@ -72,42 +69,73 @@ const superIf = (carrier)=>{
     console.log("=")
     let num =0
     if(operator === "add"){
-        num = num1 + num2
+        num = parseFloat(num1) + parseFloat(num2)
     }else if(operator === "subtract"){
-        num = num1 - num2
+        num = parseFloat(num1) - parseFloat(num2)
     }else if(operator === "multiply"){
-        num = num1 * num2
+      console.log(parseInt(num1))
+      console.log(parseFloat(num2))
+        num = parseFloat(num1) * parseFloat(num2)
+        console.log (num)
     }else if(operator === "divide"){
-        num = num1 / num2
+        num = parseFloat(num1) / parseFloat(num2)
     }
     
     console.log(num)
     setnum1(num)
     setdisplay(num)
     setnum2(0)
-    setoperator(()=>(a,b)=> {})
+    setoperator("")
     setcarrier("")
 
   } else if (Number.isInteger(carrier)||carrier ===".") {
 
     if(numA === "A"){
-      console.log("a")
-      let holder =parseInt(`${num1}${carrier}`)
+      
+      if (num1 === 0){
+        if (carrier ==="."){
+
+           holder =`${num1}${carrier}`
+          
+        }else{
+
+           holder = parseInt(`${num1}${carrier}`)
+          
+        }
+
+      }else{
+      holder =`${num1}${carrier}`}
       setnum1(holder);
       setdisplay(holder);
-
-      
-      console.log(holder);
       setcarrier("")
+      
 
-    }else{
-     let holder = parseInt(`${num2}${carrier}`)
+     }else{
+      if (num2 === 0){
+        if (carrier ==="."){
+
+           holder =`${num2}${carrier}`
+          
+        }else{
+
+           holder = parseInt(`${num2}${carrier}`)
+          
+        }
+
+      }else{
+      holder =`${num2}${carrier}`}
       setnum2(holder);
       setdisplay(holder);
-      
-      console.log("b")
-      console.log(num2)
       setcarrier("")
+
+
+
+
+     
+      
+      
+      
+     
         
     }
 
