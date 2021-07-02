@@ -23,11 +23,11 @@ import React from "react";
 const Button = (props) =>{
   
   return (
-    <div>
-      <button onClick={()=> {
+    
+      <button id={props.id} onClick={()=> {
              props.func(props.label)}}>{props.label}
       </button>
-    </div>
+    
   )
 };
 

@@ -33,11 +33,13 @@ const superIf = (carrier)=>{
     if(numA === "A"){
 
       setnum1(0)
+      setdisplay(0)
       setcarrier("")
 
     }else{
 
       setnum2(0)
+      setdisplay(0)
       setcarrier("")
     }
   } else if(carrier ===" / "){
@@ -116,33 +118,33 @@ superIf(carrier)
   return (
     <div className="App">
       <Display label = {display} />
-      <div id="div1" className="div">
-        <Button id="aa" label = " Clear " func={setcarrier}/>
-        <Button id="ab" label = " C " func={setcarrier}/>
-        <Button id="ac" label = " / " func={setcarrier}/>
+      <div id="div1" className="divRow">
+        <Button id ="aa" label = " Clear " func={setcarrier}/>
+        <Button id ="ab" label = " C " func={setcarrier}/>
+        <Button id ="ac" label = " / " func={setcarrier}/>
       </div>
-      <div id="div2" className="div">
-        <Button id="ba" label = {9} func={setcarrier}/>
-        <Button id="bb" label = {8} func={setcarrier}/>
-        <Button id="bc" label = {7} func={setcarrier}/>
-        <Button id="bd" label = " * " func={setcarrier}/>
+      <div id="div2" className="divRow">
+        <Button id ="ba" label = {9} func={setcarrier}/>
+        <Button id ="bb" label = {8} func={setcarrier}/>
+        <Button id ="bc" label = {7} func={setcarrier}/>
+        <Button id ="bd" label = " * " func={setcarrier}/>
       </div>
-      <div  id="div3" className="div">
-        <Button id="ca" label = {6} func={setcarrier}/>
-        <Button id="cb" label = {5} func={setcarrier}/>
-        <Button id="cc" label = {4} func={setcarrier}/>
-        <Button id="cd" label = " - " func={setcarrier}/>
+      <div  id="div3" className="divRow">
+        <Button id ="ca" label = {6} func={setcarrier}/>
+        <Button id ="cb" label = {5} func={setcarrier}/>
+        <Button id ="cc" label = {4} func={setcarrier}/>
+        <Button id ="cd" label = " - " func={setcarrier}/>
       </div>
-      <div id="div4" className="div">
-        <Button id="da" label = {3} func={setcarrier}/>
-        <Button id="db" label = {2} func={setcarrier}/>
-        <Button id="dc" label = {1} func={setcarrier}/>
-        <Button id="dd" label = " + " func={setcarrier} />
+      <div id="div4" className="divRow">
+        <Button id ="da" label = {3} func={setcarrier}/>
+        <Button id ="db" label = {2} func={setcarrier}/>
+        <Button id ="dc" label = {1} func={setcarrier}/>
+        <Button id ="dd" label = " + " func={setcarrier} />
       </div>
-      <div id="div5" className="div">
-        <Button id="ea" label = {0} func={setcarrier}/>
-        <Button id="eb" label = "." func={setcarrier}/>
-        <Button id="ec" label = " = " func={setcarrier}/>
+      <div id="div5" className="divRow">
+        <Button id ="ea" label = {0} func={setcarrier}/>
+        <Button id ="eb" label = "." func={setcarrier}/>
+        <Button id ="ec" label = " = " func={setcarrier}/>
       </div>
 
     </div>

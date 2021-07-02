@@ -1,24 +1,57 @@
 .App {
   width: 100%;
   text-align: center;
+  
  
 }
 
-.div{
-  width: 100%;
+.divRow{
+  margin: auto;
+  
+  max-width: 400px;
   display:flex;
-  flex-wrap: wrap;
+  flex-direction:row ;
+  justify-content: center;
+  height: 60px;
+
 }
 
+
+
 button{
-  justify-self: center;
+  background-color: white;
+  font-size:20px;
   flex:1;
+  
+  height: auto;
 }
 #aa{
-  flex:2;
+  flex: 2.2;
+  background-color: red;
 }
+#ab{
+  background-color: red;
+}
+
+#ac{
+  background-color: blue
+}
+
+#bd{
+  background-color:blue
+}
+
+#cd{
+  background-color: blue
+}
+
+#dd{
+  background-color: blue
+}
+
 #ec{
-  flex:2;
+  flex:2.2;
+  background-color: green;
 }
 
 
